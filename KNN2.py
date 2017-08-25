@@ -15,7 +15,7 @@ def classfy0(intX, dataSet, labels, k):
     for i in range(k):
         distanceArgSort[i]
         labels[distanceArgSort[i]]
-        arr[labels[distanceArgSort[i]]]
+        # arr[labels[distanceArgSort[i]]]
         arr[labels[distanceArgSort[i]]]= arr.get(labels[distanceArgSort[i]], 0) + 1
 
     arr = sorted(arr.items(), key=operator.itemgetter(1), reverse=True)
@@ -27,14 +27,14 @@ def file2matrix(filename):
     arrayOLines = fr.readlines()
     l = list(map(lambda x: x.strip().split("\t"), arrayOLines))
     retMat = double(vstack(l)[:, 0:3])
-    labels = transpose(vstack(l)[:, -1:])
+    labels = transpose(vstack(l)[:, -1:])[0]
     return labels , retMat
 
     # for i in range(numberOfLines):
 
 
 if __name__ == "__main__":
-    labels, dataSet = file2matrix("D:\opensource\machinelearninginaction\Ch02\datingTestSet2.txt")
+    labels, dataSet = file2matrix("D:\opensource\machinelearninginaction\Ch02\datingTestSet.txt")
     # dataSet,labels= createData()
     intX = array([3,4,23])
     print(classfy0(intX,dataSet,labels,3))
