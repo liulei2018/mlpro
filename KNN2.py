@@ -8,17 +8,33 @@ def createData():
     return dataSet, labels
 
 
-def classfy2(intX, dataSet, labels, k):
+def classfy0(intX, dataSet, labels, k):
     distance = hstack(list(map(lambda x: ((intX - x) ** 2).sum(axis=0) ** 0.5, dataSet)))
     distanceArgSort = distance.argsort()
     arr = {}
     for i in range(k):
-        arr[labels[distanceArgSort[i]]] = arr.get(labels[distanceArgSort[i]], 0) + 1
+        distanceArgSort[i]
+        labels[distanceArgSort[i]]
+        arr[labels[distanceArgSort[i]]]
+        arr[labels[distanceArgSort[i]]]= arr.get(labels[distanceArgSort[i]], 0) + 1
 
-    arr = sorted(arr.items(),key = operator.itemgetter(1),reverse=True)
+    arr = sorted(arr.items(), key=operator.itemgetter(1), reverse=True)
     return arr[0][0]
 
 
+def file2matrix(filename):
+    fr = open(filename)
+    arrayOLines = fr.readlines()
+    l = list(map(lambda x: x.strip().split("\t"), arrayOLines))
+    retMat = double(vstack(l)[:, 0:3])
+    labels = transpose(vstack(l)[:, -1:])
+    return labels , retMat
+
+    # for i in range(numberOfLines):
+
+
 if __name__ == "__main__":
-    labels, dataSet = createData()
-    print(classfy2(array([1, 2]), labels, dataSet, 3))
+    labels, dataSet = file2matrix("D:\opensource\machinelearninginaction\Ch02\datingTestSet2.txt")
+    # dataSet,labels= createData()
+    intX = array([3,4,23])
+    print(classfy0(intX,dataSet,labels,3))
