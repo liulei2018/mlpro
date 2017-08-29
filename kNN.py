@@ -77,8 +77,8 @@ def datingClassTest():
 
 if __name__ == "__main__":
     groupbl, labels = createDataset()
-    print(2323)
-    print(classfy0([0, 0], groupbl, labels, 3))
+    # print(2323)
+    # print(classfy0([0, 0], groupbl, labels, 3))
     # datingDataMat, datingLabels = file2matrix("D:\opensource\machinelearninginaction\Ch02\datingTestSet2.txt")
     # print(datingDataMat)
     # print(datingLabels[0:20])
@@ -88,4 +88,4 @@ if __name__ == "__main__":
     #  # 15.0 * array(datingLabels), 15.0 * array(datingLabels)
     # plt.show()
 
-    datingClassTest()
+    # datingClassTest()

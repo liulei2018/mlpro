@@ -69,8 +69,9 @@ if __name__ == "__main__":
     # ax.scatter(dataSet[:, 1], dataSet[:, 2], 15 * labels, 15 * labels)
     # plt.show()
     # # dataSet,labels= createData()
-    # intX = array([3, 4, 23])
-    # # print(classfy0(intX, dataSet, labels, 3))
+    intX = array([3, 4, 23])
+    xx = intX.shape
+    # print(classfy0(intX, dataSet, labels, 3))
     #
     # normDataSet, minVals, ranges = autoNorm(dataSet)
     # print(normDataSet, minVals, ranges)
