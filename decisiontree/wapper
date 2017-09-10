@@ -1,0 +1,20 @@
+def log(func):
+    def wapper(*args, **kw):
+        print('call in %s()' % func.__name__)
+        return func(*args, **kw)
+
+    return wapper()
+
+
+def eeeeee():
+    print('eeeeeeeee')
+@log('eeeeee')
+def now1():
+    print('now')
+    return ''
+
+
+if __name__ == "__main__":
+    now1
+
+    # now = log('now1')(now1)
